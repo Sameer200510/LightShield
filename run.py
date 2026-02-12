@@ -1,4 +1,3 @@
-
 from flask import Flask
 from src.lightshield.utils.signature_checker import check_signature
 
@@ -17,7 +16,7 @@ def test(payload):
 
 if __name__ == "__main__":
     app.run(debug=True)
-=======
+
 from flask import Flask
 from src.lightshield.utils.signature_checker import check_signature
 
