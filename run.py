@@ -4,7 +4,6 @@ from src.lightshield.utils.preprocessor import extract_features
 from src.lightshield.utils.ml_checker import check_ml
 
 app = Flask(__name__)
-
 @app.route("/")
 def home():
     return "LightShield is Running 🚀"
