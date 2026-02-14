@@ -8,7 +8,6 @@ app = Flask(__name__)
 def home():
     return "LightShield is Running 🚀"
 
-
 @app.route("/test/<path:payload>")
 def test(payload):
 
