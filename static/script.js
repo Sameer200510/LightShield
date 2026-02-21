@@ -62,6 +62,7 @@ window.onload = function () {
 
     init();
     animate();
+    
 function openModal() {
     document.getElementById("infoModal").style.display = "block";
 }
