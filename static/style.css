@@ -225,6 +225,15 @@ form button:hover {
 }
 
 /* Modal */
+.modal-content a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
 .modal {
     display: none;
     position: fixed;
