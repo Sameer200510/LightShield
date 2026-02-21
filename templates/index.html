@@ -13,8 +13,35 @@
 
 <div class="container">
 
-    <h1 class="title">🛡 LightShield </h1>
+    <!-- HEADER WITH INFO BUTTON -->
+    <div class="header">
+        <h1 class="title">🛡 LightShield</h1>
+        <button class="info-btn" onclick="openModal()" title="About Developer">
+            ℹ
+        </button>
+    </div>
+
     <p class="subtitle">AI Powered Hybrid Web Application Firewall</p>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="card">
+            <h2 class="counter" data-target="{{ total_requests }}">0</h2>
+            <span>Total Requests</span>
+        </div>
+        <div class="card threat">
+            <h2 class="counter" data-target="{{ total_threats }}">0</h2>
+            <span>Total Threats</span>
+        </div>
+        <div class="card">
+            <h2 class="counter" data-target="{{ sig_count }}">0</h2>
+            <span>Signature</span>
+        </div>
+        <div class="card">
+            <h2 class="counter" data-target="{{ ml_count }}">0</h2>
+            <span>ML</span>
+        </div>
+    </div>
 
     <!-- STATS -->
     <div class="stats">
