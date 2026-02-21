@@ -207,21 +207,21 @@ form button:hover {
     align-items: center;
 }
 
-/* Info Button */
 .info-btn {
     background: transparent;
     border: 1px solid #00c6ff;
     color: #00c6ff;
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 16px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .info-btn:hover {
     background: #00c6ff;
     color: black;
+    transform: scale(1.1);
 }
 
 /* Modal */
