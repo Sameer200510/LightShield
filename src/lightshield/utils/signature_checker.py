@@ -1,6 +1,5 @@
 import re
 
-# SQL Injection Patterns
 SQL_PATTERNS = [
     r"(?i)\bselect\b",
     r"(?i)\bunion\b",
@@ -10,7 +9,6 @@ SQL_PATTERNS = [
     r"(?i)\bor\s+1=1\b",
 ]
 
-# XSS Patterns
 XSS_PATTERNS = [
     r"(?i)<script.*?>.*?</script>",
     r"(?i)javascript:",
@@ -18,7 +16,6 @@ XSS_PATTERNS = [
     r"(?i)onload\s*=",
 ]
 
-# Command Injection Patterns
 CMD_PATTERNS = [
     r";\s*ls",
     r";\s*cat",
@@ -33,6 +30,6 @@ def check_signature(payload: str) -> int:
 
     for pattern in patterns:
         if re.search(pattern, payload):
-            return 1  # Malicious detected
+            return 1
 
-    return 0  # Safe
+    return 0

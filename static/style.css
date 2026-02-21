@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    background: #000;
+    font-family: monospace;
+    color: white;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+.container {
+    width: 1100px;
+    margin: 40px auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    color: cyan;
+    text-shadow: 0 0 15px cyan;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid cyan;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 25px cyan;
+    transform: scale(1.05);
+}
+
+.card h2 {
+    font-size: 30px;
+}
+
+.threat h2 {
+    color: red;
+}
+
+.form-section textarea {
+    width: 100%;
+    height: 120px;
+    margin-top: 30px;
+    background: #111;
+    color: lime;
+    border: 1px solid cyan;
+    padding: 15px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    background: cyan;
+    border: none;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.safe {
+    border: 1px solid lime;
+    box-shadow: 0 0 15px lime;
+}
+
+.danger {
+    border: 1px solid red;
+    box-shadow: 0 0 15px red;
+}
+
+.panels {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feed-panel, .chart-panel {
+    flex: 1;
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.feed-list {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.safe-text { color: lime; }
+.danger-text { color: red; }
+
+.chart-wrapper {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.console-panel {
+    margin-top: 40px;
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.console-box {
+    font-size: 12px;
+    color: lime;
+    max-height: 150px;
+    overflow-y: auto;
+}

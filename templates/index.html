@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LightShield SOC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="container">
+
+    <h1 class="title">🛡 LightShield </h1>
+    <p class="subtitle">AI Powered Hybrid Web Application Firewall</p>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="card">
+            <h2 class="counter" data-target="{{ total_requests }}">0</h2>
+            <span>Total Requests</span>
+        </div>
+        <div class="card threat">
+            <h2 class="counter" data-target="{{ total_threats }}">0</h2>
+            <span>Total Threats</span>
+        </div>
+        <div class="card">
+            <h2 class="counter" data-target="{{ sig_count }}">0</h2>
+            <span>Signature</span>
+        </div>
+        <div class="card">
+            <h2 class="counter" data-target="{{ ml_count }}">0</h2>
+            <span>ML</span>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <form method="POST" class="form-section">
+        <textarea name="payload" placeholder="Enter payload..." required></textarea>
+        <button type="submit">ANALYZE</button>
+    </form>
+
+    {% if result %}
+    <div class="result {% if result.startswith('🚨') %}danger{% else %}safe{% endif %}">
+        <h3>{{ result }}</h3>
+        <p>{{ detection_type }}</p>
+    </div>
+    {% endif %}
+
+    <!-- LOWER PANELS -->
+    <div class="panels">
+
+        <div class="feed-panel">
+            <h3>🔴 Live Attack Feed</h3>
+            <div class="feed-list">
+                {% for r in recent_requests %}
+                <div class="feed-item {% if r.status == 'Threat' %}danger-text{% else %}safe-text{% endif %}">
+                    [{{ r.time }}] {{ r.payload }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="chart-panel">
+            <h3>📊 Threat Breakdown</h3>
+            <div class="chart-wrapper">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CONSOLE -->
+    <div class="console-panel">
+        <h3>💻 Security Console</h3>
+        <div class="console-box">
+            {% for r in recent_requests %}
+            <div>> {{ r.time }} | {{ r.status }} | {{ r.payload }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<!-- SAFE JAVASCRIPT INJECTION -->
+<script>
+const chartData = {
+    signature: {{ sig_count }},
+    ml: {{ ml_count }},
+    safe: {{ total_requests - total_threats }}
+};
+
+const ctx = document.getElementById("chart").getContext("2d");
+
+new Chart(ctx, {
+    type: "doughnut",
+    data: {
+        labels: ["Signature", "ML", "Safe"],
+        datasets: [{
+            data: [
+                chartData.signature,
+                chartData.ml,
+                chartData.safe
+            ],
+            backgroundColor: ["#ff3b3b", "#ff8c00", "#00ff88"]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: "bottom",
+                labels: {
+                    color: "white"
+                }
+            }
+        }
+    }
+});
+</script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
