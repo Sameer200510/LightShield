@@ -3,7 +3,8 @@ import requests
 import os
 from flask import Flask, render_template, request, Response
 from src.lightshield.utils.signature_checker import check_signature
-from src.lightshield.utils.preprocessor import extract_features
+from
+src.lightshield.utils.preprocessor import extract_features
 from src.lightshield.utils.ml_checker import check_ml
 
 app = Flask(__name__)
