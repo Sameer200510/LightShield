@@ -14,7 +14,6 @@ xss_df = xss_df[["Sentence", "Label"]]
 xss_df.columns = ["payload", "label"]
 # Combine datasets
 df = pd.concat([sql_df, xss_df], ignore_index=True)
-
 print("Total Samples:", len(df))
 
 # Feature extraction
