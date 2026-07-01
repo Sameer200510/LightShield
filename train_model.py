@@ -8,7 +8,6 @@ from src.lightshield.utils.preprocessor import extract_features
 sql_df = pd.read_csv("dataset/sql.csv", low_memory=False)
 sql_df = sql_df[["full_query", "label"]]
 sql_df.columns = ["payload", "label"]
-
 # Load XSS dataset
 xss_df = pd.read_csv("dataset/xss.csv")
 
