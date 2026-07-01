@@ -10,10 +10,8 @@ sql_df = sql_df[["full_query", "label"]]
 sql_df.columns = ["payload", "label"]
 # Load XSS dataset
 xss_df = pd.read_csv("dataset/xss.csv")
-
 xss_df = xss_df[["Sentence", "Label"]]
 xss_df.columns = ["payload", "label"]
-
 # Combine datasets
 df = pd.concat([sql_df, xss_df], ignore_index=True)
 
