@@ -4,8 +4,6 @@ from lightgbm import LGBMClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from src.lightshield.utils.preprocessor import extract_features
-
-
 # Load SQL dataset
 sql_df = pd.read_csv("dataset/sql.csv", low_memory=False)
 
