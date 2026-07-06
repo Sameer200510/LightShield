@@ -1,6 +1,5 @@
 import re
 
-
 SQL_PATTERNS = [
     r"(?i)\bselect\b",
     r"(?i)\bunion\b",
@@ -34,3 +33,4 @@ def check_signature(payload: str) -> int:
             return 1
 
     return 0
+
