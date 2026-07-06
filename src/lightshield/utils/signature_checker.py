@@ -1,5 +1,6 @@
 import re
 
+
 SQL_PATTERNS = [
     r"(?i)\bselect\b",
     r"(?i)\bunion\b",
