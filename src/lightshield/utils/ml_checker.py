@@ -8,3 +8,4 @@ model = joblib.load(MODEL_PATH)
 
 def check_ml(features):
     return model.predict([features])[0]
+
