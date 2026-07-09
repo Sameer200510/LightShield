@@ -8,7 +8,6 @@ window.onload = function () {
     canvas.height = window.innerHeight;
 
     let blobs = [];
-
     class Blob {
         constructor() {
             this.x = Math.random() * canvas.width;
