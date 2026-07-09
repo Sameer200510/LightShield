@@ -93,7 +93,7 @@ form button:hover {
     background: #00a3d6;
 }
 
-/* Result */
+
 .result {
     margin-top: 20px;
     padding: 15px;
@@ -110,7 +110,7 @@ form button:hover {
     background: rgba(255,59,59,0.1);
 }
 
-/* Panels */
+
 .panels {
     margin-top: 40px;
     display: grid;
@@ -200,7 +200,7 @@ form button:hover {
         height: 200px;
     }
 }
-/* Header Layout */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -224,7 +224,7 @@ form button:hover {
     transform: scale(1.1);
 }
 
-/* Modal */
+
 .modal-content a {
     color: #00c6ff;
     text-decoration: none;
