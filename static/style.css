@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
-
+ 
 canvas#bg {
     position: fixed;
     top: 0;
