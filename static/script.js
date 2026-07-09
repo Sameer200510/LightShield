@@ -1,6 +1,7 @@
 window.onload = function () {
 
-    const canvas = document.getElementById("bg");
+    const canvas =
+ document.getElementById("bg");
     const ctx = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
