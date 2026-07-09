@@ -87,7 +87,7 @@ window.onclick = function(event) {
             if (count < target) {
                 count += increment;
                 counter.innerText = Math.floor(count);
-                requestAnimationFrame(updateCounter);
+             requestAnimationFrame(updateCounter);
             } else {
                 counter.innerText = target;
             }
