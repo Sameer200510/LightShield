@@ -1,6 +1,6 @@
 import re
 
-def extract_features(text: str):
+def extract_features(text: str):   
 
     length = len(text)
     special_chars = len(re.findall(r"[^\w\s]", text))
